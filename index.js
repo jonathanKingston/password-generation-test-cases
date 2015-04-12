@@ -5,11 +5,16 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('port', (process.env.PORT || 3000));
 
-app.post('/tests/1/login-submit', function (req, res) {
+app.post('/tests/5/login-submit', httpLoginSubmit);
+app.post('/tests/3/login-submit', httpLoginSubmit);
+app.post('/tests/1/login-submit', httpLoginSubmit);
+
+function httpLoginSubmit(req, res) {
   res.send('Form submitted. Username: ' + req.body.username + ' Password: ' + req.body.password );
-});
-app.post('/tests/3/login-submit', function (req, res) {
-  res.send('Form submitted. Username: ' + req.body.username + ' Password: ' + req.body.password );
+}
+
+app.post('/tests/4/register-submit', function (req, res) {
+  res.send('Form submitted. Name: ' + req.body.name + ' Username: ' + req.body.username + ' Password: ' + req.body.password + '<br /><a href="/tests/5">Login test</a>');
 });
 
 app.post('/tests/2/login-submit', function (req, res) {
