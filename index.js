@@ -13,9 +13,12 @@ function httpLoginSubmit(req, res) {
   res.send('Form submitted. Username: ' + req.body.username + ' Password: ' + req.body.password );
 }
 
-app.post('/tests/4/register-submit', function (req, res) {
+app.post('/tests/4/register-submit', httpRegisterSubmit);
+app.post('/tests/6/register-submit', httpRegisterSubmit);
+
+function httpRegisterSubmit(req, res) {
   res.send('Form submitted. Name: ' + req.body.name + ' Username: ' + req.body.username + ' Password: ' + req.body.password + '<br /><a href="/tests/5">Login test</a>');
-});
+}
 
 app.post('/tests/2/login-submit', function (req, res) {
   if (req.body.username === 'user' && req.body.password === 'password') {

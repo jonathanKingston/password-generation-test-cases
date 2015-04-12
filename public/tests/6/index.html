@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Strong register demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <form method="post" action="/tests/6/register-submit" >
+      <label>
+        <div>Name</div>
+        <input
+          name="name"
+          placeholder="name"
+          autocomplete="name"
+          type="text"
+          pattern=".{4,}"
+          title="Needs to be 4 characters long."
+          required
+        />
+      </label>
+      <label>
+        <div>Username</div>
+        <input
+          name="username"
+          placeholder="Username"
+          type="text"
+          autocomplete="username"
+          pattern=".{4,}"
+          title="Needs to be 4 characters long."
+          required
+        />
+      </label>
+      <label>
+        <div>Password</div>
+        <input
+          name="password"
+          placeholder="Password"
+          type="password"
+          autocomplete="new-password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=(.*[^a-zA-Z0-9\s]){2,}).{25,}"
+          title="
+            Needs to be 25 characters long.
+            Must contain at least two characters that are not: a number, space, or letter.
+            Must contain at least one number, uppercase letter and lowercase letter.
+          "
+          required
+        />
+      </label>
+      <input type="submit" value="Register" />
+    </form>
+
+    <div>
+      <h2>Expected behaviour</h2>
+      <p>Browser should suggest options for a new 25 character password and username.</p>
+    </div>
+  </body>
+</html>
