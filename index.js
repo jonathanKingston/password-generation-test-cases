@@ -8,6 +8,9 @@ app.set('port', (process.env.PORT || 3000));
 app.post('/tests/1/login-submit', function (req, res) {
   res.send('Form submitted. Username: ' + req.body.username + ' Password: ' + req.body.password );
 });
+app.post('/tests/3/login-submit', function (req, res) {
+  res.send('Form submitted. Username: ' + req.body.username + ' Password: ' + req.body.password );
+});
 
 app.post('/tests/2/login-submit', function (req, res) {
   if (req.body.username === 'user' && req.body.password === 'password') {
