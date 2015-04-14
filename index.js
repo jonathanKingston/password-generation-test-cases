@@ -20,14 +20,17 @@ function httpRegisterSubmit(req, res) {
   res.send('Form submitted. Name: ' + req.body.name + ' Username: ' + req.body.username + ' Password: ' + req.body.password + '<br /><a href="/tests/5">Login test</a>');
 }
 
-app.post('/tests/2/login-submit', function (req, res) {
+app.post('/tests/2/login-submit', ajaxLoginSubmit);
+app.post('/tests/7/login-submit', ajaxLoginSubmit);
+
+function ajaxLoginSubmit(req, res) {
   if (req.body.username === 'user' && req.body.password === 'password') {
     res.cookie('authdemo', '1qwe2qeqt4t23r23r', { expires: new Date(Date.now() + 900000), httpOnly: true });
     res.status(200).send({loggedin: true}).end();
   } else {
     res.status(400).send({loggedin: false}).end();
   }
-});
+}
 
 app.use(express.static('public'));
 
