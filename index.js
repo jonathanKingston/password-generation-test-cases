@@ -24,6 +24,7 @@ app.post('/tests/2/login-submit', ajaxLoginSubmit);
 app.post('/tests/7/login-submit', ajaxLoginSubmit);
 app.post('/tests/8/login-submit', ajaxLoginSubmit);
 app.post('/tests/9/login-submit', ajaxLoginSubmit);
+app.post('/tests/10/login-submit', ajaxLoginSubmit);
 
 function ajaxLoginSubmit(req, res) {
   if (req.body.username === 'user' && req.body.password === 'password') {

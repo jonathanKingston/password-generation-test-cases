@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login ajax demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <form method="post" action="/tests/10/login-submit" >
+      <label>
+        <div>Username</div>
+        <input
+          name="username"
+          placeholder="Username"
+          type="text"
+          required
+        />
+      </label>
+      <label>
+        <div>Password</div>
+        <input
+          name="password"
+          placeholder="Password"
+          type="password"
+          required
+        />
+      </label>
+      <input type="submit" value="Login" />
+    </form>
+    <div>
+      Username: user<br />
+      Password: password
+    </div>
+
+    <script src="/tests/10/script.js"></script>
+  </body>
+</html>
